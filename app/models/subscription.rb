@@ -4,8 +4,6 @@ class Subscription < ActiveRecord::Base
 
   attr_accessor :number, :number_writer
 
-  attr_accessible :exp_month, :exp_year, :last_four_digits, :cardholder_name, :card_type
-
   belongs_to :user
   has_many  :invoices
 

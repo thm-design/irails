@@ -9,8 +9,5 @@ class User < ActiveRecord::Base
       small: '32x32#'
     }
 
-  attr_accessible :email, :password, :password_confirmation, :full_name,
-                  :about, :avatar
-
   validates :full_name, presence: true
 end

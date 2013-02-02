@@ -17,7 +17,9 @@ gem 'gritter', '1.0.3'
 gem 'seedbank', '0.2.0'
 gem 'data_migrate', github: 'droidlabs/data-migrate'
 gem 'navigation_link_to', '0.0.1'
-gem 'roadie'
+
+# TODO: enable after fixing issue loading in Rails 4
+# gem 'roadie'
 
 # background jobs
 gem 'resque'
@@ -28,7 +30,8 @@ gem 'yell', '1.2.3'
 gem 'json', '1.7.6'
 
 # admin panel
-gem 'activeadmin', '0.5.1'
+# TODO: enable after fixing issue loading in Rails 4
+# gem 'activeadmin', '0.5.1'
 gem 'polyamorous', github: 'droidlabs/polyamorous'
 gem 'meta_search', github: 'droidlabs/meta_search'
 
@@ -36,12 +39,13 @@ gem 'meta_search', github: 'droidlabs/meta_search'
 # gem 'stripe', '1.7.9'
 
 # assets
-gem 'jquery-rails', '2.2.0'
-gem 'sass-rails', '4.0.0.beta', github: 'rails/sass-rails'
 group :assets do
   gem 'bourbon', '3.0.1'
+  gem 'jquery-rails', '2.2.0'
+  gem 'sass-rails', '4.0.0.beta', github: 'rails/sass-rails'
+  gem 'sprockets-rails', '~> 2.0.0.rc1'
   gem 'coffee-rails', '4.0.0.beta', github: 'rails/coffee-rails'
-  gem 'uglifier'
+  gem 'uglifier', '>= 1.0.3'
   gem 'execjs'
   gem 'therubyracer'
 end
