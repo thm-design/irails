@@ -191,6 +191,8 @@ GEM
       moped (~> 1.2)
       origin (~> 1.0)
       tzinfo (~> 0.3.22)
+    mongoid-paperclip (0.0.8)
+      paperclip (>= 2.3.6)
     mongoid-rspec (1.6.0)
       mongoid (>= 3.0.1)
       rake
@@ -406,10 +408,10 @@ DEPENDENCIES
   letter_opener (= 0.0.2)!
   mocha (= 0.13.2)
   mongoid (~> 3.0.0)
+  mongoid-paperclip
   mongoid-rspec (>= 1.6.0)
   mysql2 (= 0.3.11)
   navigation_link_to (= 0.0.1)
-  paperclip (= 3.4.1)
   poltergeist (= 1.1.0)
   pry-rails
   quiet_assets (= 1.0.1)
