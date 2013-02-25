@@ -25,9 +25,7 @@ gem 'yell', '1.3.0'
 gem 'json', '1.7.7'
 
 # admin panel
-# TODO: enable after fixing issue loading with mongoid
-# gem 'activeadmin-mongoid', git: 'git://github.com/simplybusiness/activeadmin-mongoid.git'
-gem 'meta_search', '1.1.3'
+gem 'activeadmin-mongoid', git: 'git://github.com/simplybusiness/activeadmin-mongoid.git'
 
 # payments
 # gem 'stripe', '1.7.9'
