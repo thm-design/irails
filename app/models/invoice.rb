@@ -1,8 +1,23 @@
 class Invoice 
   include Mongoid::Document
   include Mongoid::Timestamps
+
+  field :card_number,            type: String, default: configatron.subscription.default_plan
+  field :status,    type: String
+  field :invoice_uid,   type: String
+  field :stripe_attributes, type: Hash
+  field :charge_uid,       type: String
+  field :card_type,       type: String
+
+  field :attemp_count, type: Integer
+  field :amount,       type: Integer
+
+  field :billed_at, type: Time
+
+  index({ invoice_uid: 1 }, { unique: true, background: true })
+  index({ status: 1 }, { unique: true, background: true })
+
   belongs_to :subscription
-  # serialize :stripe_attributes, Hash
 
   def amount_in_dollars
     (amount / 100).to_i

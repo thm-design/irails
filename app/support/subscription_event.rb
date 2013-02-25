@@ -13,13 +13,12 @@ class SubscriptionEvent
   end
 
   def subscription
-    @subscription ||= Subscription.find_by_customer_uid(stripe_customer_uid)
+    # User.where('subscription.customer_uid' => ...).first.try(:subscription)
+    @subscription ||= Subscription.where(customer_uid: stripe_customer_uid).first
   end
 
   def invoice
-    @invoice ||= Invoice.find_or_create_by_invoice_uid_and_subscription_id(
-      stripe_invoice_uid, subscription.id
-    )
+    @invoice ||= Invoice.find_or_create_by(invoice_uid: stripe_invoice_uid, subscription_id: subscription.id)
   end
 
   def handle

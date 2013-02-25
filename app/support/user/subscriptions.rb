@@ -2,7 +2,7 @@ module User::Subscriptions
   extend ActiveSupport::Concern
 
   included do
-    has_one :subscription, dependent: :destroy
+    has_one :subscription
     before_create :build_subscription
 
     delegate :plan, :plan?, :blocked?, to: :subscriptions, prefix: true

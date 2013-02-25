@@ -2,14 +2,25 @@ class Subscription
   include Mongoid::Document
   include Mongoid::Timestamps
   DEV_CARD = 'dev_card'
-  # default_value_for :plan, configatron.subscription.default_plan
+
+  field :plan,            type: String, default: configatron.subscription.default_plan
+  field :customer_uid,    type: String
+  field :customer_card,   type: String
+  field :cardholder_name, type: String
+  field :card_type,       type: String
+
+  field :exp_year,         type: Integer
+  field :exp_month,        type: Integer
+  field :last_four_digits, type: Integer
+
+  field :blocked_at, type: Time
 
   attr_accessor :number, :number_writer
 
   attr_accessible :exp_month, :exp_year, :last_four_digits, :cardholder_name, :card_type
 
   belongs_to :user
-  has_many  :invoices
+  has_many :invoices
 
   validates  :plan, inclusion: configatron.subscription.plans, presence: true
 

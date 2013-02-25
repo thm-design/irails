@@ -55,5 +55,4 @@ class User
   validates_presence_of :full_name
   attr_accessible :email, :password, :password_confirmation, :full_name,
                   :about 
-
 end
