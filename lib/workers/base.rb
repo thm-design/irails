@@ -1,6 +1,5 @@
 # Start any worker with command: Workers::MyWorker.perform_async('test')
 class Workers::Base
-  include Services::Logger
   include Workers::ResqueAdapter if defined?(Resque)
   include Workers::SidekiqAdapter if defined?(Sidekiq)
 
