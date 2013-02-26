@@ -4,7 +4,6 @@ log/*.log
 log/**/*
 tmp/
 .sass-cache/
-config/mongoid.yml
 .DS_Store
 public/system/**/*
 coverage/
